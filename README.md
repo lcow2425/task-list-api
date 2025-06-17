@@ -8,9 +8,9 @@ A simple Node.js API to manage tasks, used to practice Git version control best 
 3. Run the server: `npm start`
 
 ## Endpoints
-- GET `/tasks`: List all tasks
-- POST `/tasks`: Add a task (body: `{ "title": "Task name" }`)
-- DELETE `/tasks/:id`: Delete a task by ID
+- GET `/tasks`: Retrieve all tasks
+- POST `/tasks`: Create a new task
+- DELETE `/tasks/:id`: Remove a task by ID
 
 ## Git Practices
 This project is used to practice:
