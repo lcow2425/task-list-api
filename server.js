@@ -26,6 +26,16 @@ app.delete('/tasks/:id', (req, res) => {
   res.status(204).send();
 });
 
+// Update a task
+app.put('/tasks/:id', (req, res) => {
+  const { id } = req.params;
+  const { title } = req.body;
+  if (!title) return res.status(400).json({ error: 'Title is required' });
+  const updated = tasks.updateTask(parseInt(id), title);
+  if (!updated) return res.status(404).json({ error: 'Task not found' });
+  res.json(updated);
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
