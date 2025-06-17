@@ -7,7 +7,7 @@ app.use(express.json());
 
 // Get all tasks
 app.get('/tasks', (req, res) => {
-  res.json(tasks.getAllTasks());
+  res.json(tasks.getAllTasks().map(task => ({ id: task.id, title: task.title, status: task.status })));
 });
 
 // Add a task
