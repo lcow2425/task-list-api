@@ -13,7 +13,7 @@ app.get('/tasks', (req, res) => {
 // Add a task
 app.post('/tasks', (req, res) => {
   const { title } = req.body;
-  if (!title) return res.status(400).json({ error: 'Title is required' });
+  if (!title || title.length < 3) return res.status(400).json({ error: 'Title must be at least 3 characters' });
   const task = tasks.addTask(title);
   res.status(201).json(task);
 });
