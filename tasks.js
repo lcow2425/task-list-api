@@ -6,7 +6,7 @@ function getAllTasks() {
 }
 
 function addTask(title) {
-  const task = { id: nextId++, title, createdAt: new Date() };
+  const task = { id: nextId++, title, status: 'pending', createdAt: new Date() };
   tasks.push(task);
   return task;
 }
