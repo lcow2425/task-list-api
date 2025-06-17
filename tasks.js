@@ -18,4 +18,11 @@ function deleteTask(id) {
   return true;
 }
 
-module.exports = { getAllTasks, addTask, deleteTask };
+function updateTask(id, title) {
+  const task = tasks.find(task => task.id === id);
+  if (!title || title.length > 50) return false;
+  if (!task) return false;
+  task.title = title;
+  return task;
+}
+module.exports = { getAllTasks, addTask, deleteTask, updateTask };
